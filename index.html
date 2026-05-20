@@ -14,7 +14,7 @@ body{
     justify-content:center;
     align-items:center;
     background:#ffdce5;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
     overflow:hidden;
 }
 
@@ -22,43 +22,48 @@ body{
     text-align:center;
 }
 
+/* PANDA */
+
 .panda{
     position:relative;
-    width:260px;
-    height:260px;
+    width:320px;
+    height:350px;
     margin:auto;
 }
 
-/* FACE */
-.face{
-    width:220px;
-    height:220px;
-    background:white;
-    border-radius:50%;
-    position:absolute;
-    left:20px;
-    top:20px;
-}
-
 /* EARS */
+
 .ear1,.ear2{
     width:70px;
     height:70px;
     background:black;
     border-radius:50%;
     position:absolute;
-    top:0;
+    top:10px;
 }
 
 .ear1{
-    left:10px;
+    left:55px;
 }
 
 .ear2{
-    right:10px;
+    right:55px;
+}
+
+/* FACE */
+
+.face{
+    width:240px;
+    height:220px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    top:40px;
+    left:40px;
 }
 
 /* EYES */
+
 .eye1,.eye2{
     width:45px;
     height:60px;
@@ -69,17 +74,18 @@ body{
 }
 
 .eye1{
-    left:55px;
+    left:60px;
 }
 
 .eye2{
-    right:55px;
+    right:60px;
 }
 
-.eye1::after,.eye2::after{
+.eye1::after,
+.eye2::after{
     content:'';
-    width:15px;
-    height:15px;
+    width:14px;
+    height:14px;
     background:white;
     border-radius:50%;
     position:absolute;
@@ -87,37 +93,66 @@ body{
     left:12px;
 }
 
+/* BLUSH */
+
+.blush1,.blush2{
+    width:28px;
+    height:18px;
+    background:#ffb3c7;
+    border-radius:50%;
+    position:absolute;
+    top:140px;
+}
+
+.blush1{
+    left:45px;
+}
+
+.blush2{
+    right:45px;
+}
+
 /* NOSE */
+
 .nose{
-    width:20px;
-    height:15px;
+    width:18px;
+    height:14px;
     background:black;
     border-radius:50%;
     position:absolute;
-    top:130px;
-    left:100px;
+    top:125px;
+    left:111px;
+}
+
+/* MOUTH */
+
+.mouth{
+    position:absolute;
+    top:145px;
+    left:108px;
+    font-size:20px;
 }
 
 /* HEART */
+
 .heart{
     position:absolute;
-    bottom:-20px;
+    bottom:10px;
     left:50%;
-    transform:translateX(-50%);
-    width:170px;
-    height:150px;
-    background:#ff5c8a;
     transform:translateX(-50%) rotate(-45deg);
+    width:160px;
+    height:160px;
+    background:#ff5c8a;
 }
 
 .heart::before,
 .heart::after{
     content:'';
-    width:170px;
-    height:150px;
+    position:absolute;
+    width:160px;
+    height:160px;
     background:#ff5c8a;
     border-radius:50%;
-    position:absolute;
 }
 
 .heart::before{
@@ -130,41 +165,105 @@ body{
     top:0;
 }
 
+/* HEART TEXT */
+
 .sorry{
     position:absolute;
     z-index:10;
     color:white;
-    font-size:30px;
+    font-size:34px;
     font-weight:bold;
-    top:65px;
-    left:35px;
+    top:60px;
+    left:28px;
     transform:rotate(45deg);
+}
+
+/* HANDS */
+
+.hand1,.hand2{
+    width:45px;
+    height:70px;
+    background:black;
+    border-radius:30px;
+    position:absolute;
+    top:170px;
+    z-index:20;
+}
+
+.hand1{
+    left:65px;
+    transform:rotate(-20deg);
+}
+
+.hand2{
+    right:65px;
+    transform:rotate(20deg);
+}
+
+/* LEGS */
+
+.leg1,.leg2{
+    width:70px;
+    height:70px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    bottom:0;
+}
+
+.leg1{
+    left:60px;
+}
+
+.leg2{
+    right:60px;
+}
+
+/* PAWS */
+
+.paw1,.paw2{
+    width:28px;
+    height:28px;
+    background:#ffb3c7;
+    border-radius:50%;
+    position:absolute;
+    bottom:20px;
+}
+
+.paw1{
+    left:82px;
+}
+
+.paw2{
+    right:82px;
 }
 
 /* BUTTONS */
 
 .buttons{
-    margin-top:80px;
+    margin-top:40px;
 }
 
 button{
-    padding:14px 28px;
+    padding:15px 30px;
     border:none;
-    border-radius:30px;
+    border-radius:40px;
     margin:10px;
-    font-size:18px;
+    font-size:20px;
     cursor:pointer;
     transition:0.3s;
 }
 
 .forgive{
-    background:#ff4d88;
+    background:#ff4f87;
     color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .not{
     background:white;
-    color:#ff4d88;
+    color:#ff4f87;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 button:hover{
@@ -172,10 +271,10 @@ button:hover{
 }
 
 .message{
-    margin-top:20px;
-    font-size:22px;
-    color:#ff4d88;
+    margin-top:25px;
+    font-size:28px;
     font-weight:bold;
+    color:#ff4f87;
 }
 
 </style>
@@ -191,25 +290,44 @@ button:hover{
         <div class="ear2"></div>
 
         <div class="face">
+
             <div class="eye1"></div>
             <div class="eye2"></div>
+
+            <div class="blush1"></div>
+            <div class="blush2"></div>
+
             <div class="nose"></div>
+
+            <div class="mouth">◡</div>
+
         </div>
+
+        <div class="hand1"></div>
+        <div class="hand2"></div>
 
         <div class="heart">
             <div class="sorry">Sorry</div>
         </div>
 
+        <div class="leg1"></div>
+        <div class="leg2"></div>
+
+        <div class="paw1"></div>
+        <div class="paw2"></div>
+
     </div>
 
     <div class="buttons">
+
         <button class="forgive" onclick="forgive()">
-            Forgive ❤️
+            Forgive 🥺
         </button>
 
         <button class="not" onclick="notForgive()">
-            Not Forgive 💔
+            Not Forgive 😔
         </button>
+
     </div>
 
     <div class="message" id="message"></div>
@@ -220,12 +338,12 @@ button:hover{
 
 function forgive(){
     document.getElementById("message").innerHTML =
-    "Thank You 🥺❤️";
+    "Thank You 💖";
 }
 
 function notForgive(){
     document.getElementById("message").innerHTML =
-    "Please Forgive!";
+    "Please Forgive !!";
 }
 
 </script>
