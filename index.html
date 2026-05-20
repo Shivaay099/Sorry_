@@ -1,74 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>I’m Sorry ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry ❤️</title>
 
 <style>
+
 body{
-background: pink;
-font-family: Arial;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffdce5;
+    font-family:Arial;
+    overflow:hidden;
 }
 
-.card{
-background:white;
-padding:40px;
-border-radius:20px;
-width:80%;
-max-width:600px;
-text-align:center;
-box-shadow:0 0 20px rgba(0,0,0,0.2);
+.container{
+    text-align:center;
 }
 
-h1{
-color:red;
+.panda{
+    position:relative;
+    width:260px;
+    height:260px;
+    margin:auto;
+}
+
+/* FACE */
+.face{
+    width:220px;
+    height:220px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    left:20px;
+    top:20px;
+}
+
+/* EARS */
+.ear1,.ear2{
+    width:70px;
+    height:70px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:0;
+}
+
+.ear1{
+    left:10px;
+}
+
+.ear2{
+    right:10px;
+}
+
+/* EYES */
+.eye1,.eye2{
+    width:45px;
+    height:60px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:80px;
+}
+
+.eye1{
+    left:55px;
+}
+
+.eye2{
+    right:55px;
+}
+
+.eye1::after,.eye2::after{
+    content:'';
+    width:15px;
+    height:15px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    top:12px;
+    left:12px;
+}
+
+/* NOSE */
+.nose{
+    width:20px;
+    height:15px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:130px;
+    left:100px;
+}
+
+/* HEART */
+.heart{
+    position:absolute;
+    bottom:-20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:170px;
+    height:150px;
+    background:#ff5c8a;
+    transform:translateX(-50%) rotate(-45deg);
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+    width:170px;
+    height:150px;
+    background:#ff5c8a;
+    border-radius:50%;
+    position:absolute;
+}
+
+.heart::before{
+    top:-80px;
+    left:0;
+}
+
+.heart::after{
+    left:80px;
+    top:0;
+}
+
+.sorry{
+    position:absolute;
+    z-index:10;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    top:65px;
+    left:35px;
+    transform:rotate(45deg);
+}
+
+/* BUTTONS */
+
+.buttons{
+    margin-top:80px;
 }
 
 button{
-padding:12px 25px;
-border:none;
-background:red;
-color:white;
-border-radius:30px;
-cursor:pointer;
-font-size:16px;
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    margin:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.forgive{
+    background:#ff4d88;
+    color:white;
+}
+
+.not{
+    background:white;
+    color:#ff4d88;
 }
 
 button:hover{
-transform:scale(1.05);
+    transform:scale(1.08);
 }
+
+.message{
+    margin-top:20px;
+    font-size:22px;
+    color:#ff4d88;
+    font-weight:bold;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="card">
-<h1>I’m Sorry ❤️</h1>
+<div class="container">
 
-<p>
-I know I made mistakes and hurt you.
-But trust me, I never wanted to become the reason behind your sadness.
-</p>
+    <div class="panda">
 
-<p>
-You matter a lot to me.
-And I genuinely hope someday you can forgive me.
-</p>
+        <div class="ear1"></div>
+        <div class="ear2"></div>
 
-<button onclick="showMessage()">
-Forgive Me?
-</button>
+        <div class="face">
+            <div class="eye1"></div>
+            <div class="eye2"></div>
+            <div class="nose"></div>
+        </div>
+
+        <div class="heart">
+            <div class="sorry">Sorry</div>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <button class="forgive" onclick="forgive()">
+            Forgive ❤️
+        </button>
+
+        <button class="not" onclick="notForgive()">
+            Not Forgive 💔
+        </button>
+    </div>
+
+    <div class="message" id="message"></div>
 
 </div>
 
 <script>
-function showMessage(){
-alert("Thank you for reading this ❤️");
+
+function forgive(){
+    document.getElementById("message").innerHTML =
+    "Thank You 🥺❤️";
 }
+
+function notForgive(){
+    document.getElementById("message").innerHTML =
+    "Please Forgive!";
+}
+
 </script>
 
 </body>
